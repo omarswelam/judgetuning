@@ -14,7 +14,6 @@ Then install with uv (recommended):
 ```
 uv sync .
 uv add -r requirements.txt
-source .venv/bin/activate
 PYTHONPATH=. python results_scripts/figure1.py 
 ```
 
@@ -24,18 +23,30 @@ pip install -r requirements.txt
 PYTHONPATH=. python results_scripts/figure1.py 
 ```
 
+For JudgeLM evaluations:
+
+```
+cd ..
+git clone https://github.com/baaivision/JudgeLM
+cd JudgeLM
+pip3 install --upgrade pip 
+pip3 install -e .
+pip install flash-attn==2.0.4 --no-build-isolation
+pip install pydantic==2.10.0 #correcting the version again
+```
 
 ## Evaluating a judge
 
-### Reevaluating a given judge configuration
+### Evaluating your own judge
+
+TODO Omar.
+
+### Reevaluating a given judge configurations
 
 If you want to reevaluate one of the 4480 judge configuration, you can run
 
 ```
-# Evaluate the length judge baseline on the test split of PandaLM dataset
 PYTHONPATH=. python judgetuning/script/evaluate_human_agreement.py --expid test --judge_class judge-length --dataset pandalm --split test
-
-# Evaluate one of our 4480 configuration on the val split of LMSys dataset
 PYTHONPATH=. python judgetuning/script/evaluate_human_agreement.py --expid test --judge_class judge-option --dataset lmsys \
 --split val --provide_confidence 1 --provide_example 0 --json_output 1 --temperature 0.001 --score_type likert 
 ```
@@ -47,23 +58,14 @@ you can configure the judge class to be our tunable class, arena-hard, alpaca-ev
 To evaluate Spearman correlation on chatbot arena, you can run:
 
 ```
-# Evaluate the length judge baseline on the test split of Alpaca-Eval dataset
 PYTHONPATH=. python judgetuning/script/evaluate_spearman_correlation.py  --expid test --judge_class judge-length --dataset alpaca-eval --split test 
 ```
 As above, you can customize the judge and other options, see `parse_args` to get the list of supported options.
 
 
-### Evaluating your own judge
-
-TODO Omar.
-
 ### Evaluating baselines
 
 TODO Omar.
-
-## Computing Multiobjective Successive-Halving
-
-TODO David.
 
 ## Generating figures & results
 
