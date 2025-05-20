@@ -14,7 +14,8 @@ fire
 tenacity
 
 #plotting & experimenting
-matplotlib
+matplotlib<3.10
+Jinja2  # ImportError: Missing optional dependency 'Jinja2'. DataFrame.style requires jinja2. Use pip or conda to install Jinja2.
 seaborn
 wandb
 huggingface_hub  # downloading datasets
