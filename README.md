@@ -27,12 +27,7 @@ PYTHONPATH=. python results_scripts/figure1.py
 
 ## Evaluating a judge
 
-
-### Evaluating your own judge
-
-TODO Omar.
-
-### Reevaluating a given judge configurations
+### Reevaluating a given judge configuration
 
 If you want to reevaluate one of the 4480 judge configuration, you can run
 
@@ -57,6 +52,10 @@ PYTHONPATH=. python judgetuning/script/evaluate_spearman_correlation.py  --expid
 ```
 As above, you can customize the judge and other options, see `parse_args` to get the list of supported options.
 
+
+### Evaluating your own judge
+
+TODO Omar.
 
 ### Evaluating baselines
 
