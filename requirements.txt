@@ -1,0 +1,29 @@
+numpy
+pytest
+pandas
+json-repair
+
+# compute utils to parallelize and keep track of time
+ray
+timeblock @ git+https://github.com/geoalgo/timeblock.git
+pyparfor @ git+https://github.com/geoalgo/pyparfor.git
+
+# for alpaca-eval correct-length
+scikit-learn
+fire
+tenacity
+
+#plotting & experimenting
+matplotlib
+seaborn
+wandb
+huggingface_hub  # downloading datasets
+
+# llm clients
+openai
+together
+ollama
+# for smol tokenisation, we could consider to remove it
+transformers
+
+tiktoken
