@@ -58,7 +58,7 @@ TODO Omar.
 
 ## Generating figures & results
 
-See `[results_scripts](results_scripts)`, for instance:
+See [results_scripts](results_scripts/), for instance:
 ```bash
 python results_scripts/figure1.py
 python results_scripts/table2.py
