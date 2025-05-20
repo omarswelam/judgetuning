@@ -1,0 +1,8 @@
+After careful examination of both model outputs, provide your answer in JSON structure like this:
+
+# JSON format expected:
+{json_format}
+
+Your answer should only contain the json answer and be a valid JSON string.
+
+# Your JSON answer

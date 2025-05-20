@@ -1,0 +1,1 @@
+You will be shown one instruction ands the output of Model A and Model B and will have to decide which one was best.

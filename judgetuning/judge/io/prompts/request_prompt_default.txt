@@ -1,0 +1,8 @@
+*Instruction*
+{instruction}
+
+*Model A*
+{output1}
+
+*Model B*
+{output2}

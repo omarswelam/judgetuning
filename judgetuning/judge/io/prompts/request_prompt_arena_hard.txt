@@ -1,0 +1,10 @@
+<|User Prompt|>
+{instruction}
+
+<|The Start of Assistant A's Answer|>
+{output1}
+<|The End of Assistant A's Answer|>
+
+<|The Start of Assistant B's Answer|>
+{output2}
+<|The End of Assistant B's Answer|>

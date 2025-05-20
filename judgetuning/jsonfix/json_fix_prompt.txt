@@ -1,0 +1,7 @@
+This string was supposed to be a valid JSON string but is not, can you fix it?
+Just output the corrected string **without any explanation**, it should be a valid JSON.
+
+# Input string
+{input_string}
+
+# Output string
