@@ -39,7 +39,12 @@ pip install pydantic==2.10.0 #correcting the version again
 
 ### Evaluating your own judge
 
-TODO Omar.
+To evaluate your own judge, you can define the `JudgeCustom` object here [class](judgetuning/judge/judge_custom.py). This will require you to define:
+- `preference`: the function you use for judging which output is preferred.
+- `swap`: flag for indicating the positions of the outputs were swapped for future analysis of position bias.
+- `judge_completion`: the text completion from an LLM judge used for evaluating `preference`.
+
+To evaluate on our datasets, define your function in the `judge-custom` case in the `make_judge` function [here](judgetuning/slurm/script/evaluate_fidelity.py).
 
 ### Reevaluating a given judge configurations
 
