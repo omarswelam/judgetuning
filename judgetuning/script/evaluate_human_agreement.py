@@ -7,7 +7,7 @@ from judgetuning.annotation_dataset.tables.tables_llmbar import LLMBarDataset
 from judgetuning.annotation_dataset.tables.tables_pandalm import PandaLMDataset
 from judgetuning.experiment_tracker import ExperimentTracker
 from judgetuning.judge.generate_judge_annotations import RequestInfo
-from judgetuning.script.evaluate_spearman_correlation import (
+from judgetuning.script.utils import (
     make_judge,
     parse_args,
 )
