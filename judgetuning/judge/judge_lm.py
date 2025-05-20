@@ -1,5 +1,4 @@
 from time import time
-import torch
 from typing import List
 
 from tqdm import tqdm
@@ -30,6 +29,7 @@ class JudgeLM7B(Judge):
     def _annotate(
         self, annotationRequests: list[AnnotationRequest]
     ) -> list[list[JudgeAnnotation]]:
+        import torch
         from judgelm.llm_judge.common import conv_judge_pair, KeywordsStoppingCriteria
         from judgelm.model import load_model
 

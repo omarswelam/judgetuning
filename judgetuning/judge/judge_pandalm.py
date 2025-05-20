@@ -1,5 +1,4 @@
 from time import time
-import torch
 from typing import List
 
 from tqdm import tqdm
@@ -44,7 +43,7 @@ class PandaLM7B(Judge):
     def _annotate(
         self, annotationRequests: list[AnnotationRequest]
     ) -> list[list[JudgeAnnotation]]:
-
+        import torch
         list_annotations = []
         for request in tqdm(annotationRequests):
             annotation_pairs = []

@@ -1,5 +1,4 @@
 from time import time
-import torch
 from typing import List
 
 from tqdm import tqdm
@@ -62,7 +61,7 @@ class PandaLM7BSkipper(Judge):
         self,
         annotationRequests: list[AnnotationRequest],  # human_preferences: List[float]
     ) -> list[list[JudgeAnnotation]]:
-
+        import torch
         list_annotations = []
         j = 0
         print(f"len(annotationRequests): {len(annotationRequests)}")

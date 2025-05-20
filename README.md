@@ -14,7 +14,7 @@ Then install with uv (recommended):
 ```
 uv sync .
 uv add -r requirements.txt
-PYTHONPATH=. uv run python results_scripts/figure1.py 
+PYTHONPATH=. python results_scripts/figure1.py 
 ```
 
 or with pip:
@@ -23,15 +23,36 @@ pip install -r requirements.txt
 PYTHONPATH=. python results_scripts/figure1.py 
 ```
 
-## Evaluating your own judge
+## Evaluating a judge
+
+
+### Evaluating your own judge
 
 TODO Omar.
 
-## Evaluating judge configurations
+### Reevaluating a given judge configurations
 
-TODO David.
+If you want to reevaluate one of the 4480 judge configuration, you can run
 
-## Evaluating baselines
+```
+PYTHONPATH=. python judgetuning/script/evaluate_human_agreement.py --expid test --judge_class judge-length --dataset pandalm --split test
+PYTHONPATH=. python judgetuning/script/evaluate_human_agreement.py --expid test --judge_class judge-option --dataset lmsys \
+--split val --provide_confidence 1 --provide_example 0 --json_output 1 --temperature 0.001 --score_type likert 
+```
+
+See `parse_args` in `evaluate_spearman_correlation.py` for 
+other supported options, for instance dataset can be "lmsys", "pandalm", "llmbar" for `evaluate_human_agreement.py`, 
+you can configure the judge class to be our tunable class, arena-hard, alpaca-eval, pandalm, judgelm, etc.
+
+To evaluate Spearman correlation on chatbot arena, you can run:
+
+```
+PYTHONPATH=. python judgetuning/script/evaluate_spearman_correlation.py  --expid test --judge_class judge-length --dataset alpaca-eval --split test 
+```
+As above, you can customize the judge and other options, see `parse_args` to get the list of supported options.
+
+
+### Evaluating baselines
 
 TODO Omar.
 
