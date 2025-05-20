@@ -14,6 +14,7 @@ Then install with uv (recommended):
 ```
 uv sync .
 uv add -r requirements.txt
+source .venv/bin/activate
 PYTHONPATH=. python results_scripts/figure1.py 
 ```
 
@@ -22,6 +23,7 @@ or with pip:
 pip install -r requirements.txt
 PYTHONPATH=. python results_scripts/figure1.py 
 ```
+
 
 ## Evaluating a judge
 
