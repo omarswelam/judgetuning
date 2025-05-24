@@ -5,6 +5,7 @@ from judgetuning.judge import Judge, JudgeAnnotation, AnnotationRequest
 
 
 class JudgeCustom(Judge):
+    """This class gives an example of a custom judge implementation to help you in case you want to benchmark your own judge."""
     def __init__(self, **kwargs):
         self.kwargs = kwargs
 
