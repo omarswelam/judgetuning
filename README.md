@@ -42,7 +42,7 @@ pip install pydantic==2.10.0 #correcting the version again
 To evaluate your own judge, you can define the `JudgeCustom` object here [class](judgetuning/judge/judge_custom.py). This will require you to define:
 - `preference`: the function you use for judging which output is preferred.
 - `swap`: flag for indicating the positions of the outputs were swapped for future analysis of position bias.
-- `judge_completion`: the text completion from an LLM judge used for evaluating `preference`.
+- `judge_completion`: the text completion from an LLM judge used for evaluating `preference` (this one is optional)
 
 ### Reevaluating a given judge configurations
 
