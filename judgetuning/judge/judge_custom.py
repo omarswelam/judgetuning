@@ -17,11 +17,11 @@ class JudgeCustom(Judge):
     ) -> list[list[JudgeAnnotation]]:
         """
         This is the main function used for evaluating the judgements. Generating a collection of `JudgeAnnotation` 
-        which contains the preference of the judge based on the pairwise outputs.
+        which contains the preference of the judge based on the pairwise outputs together with additional metadata.
 
         Args:
         requests -> list[AnnotationRequest]: The input is in the format of a list of AnnotationRequest objects
-                                              that contain the pairwise LLM outputs to be evaluated.
+                                              that contain the pairwise LLM outputs to be evaluated, each element in the list is a different battle.
 
         Output:
         annotations -> list[list[JudgeAnnotation]]: A list of lists of JudgeAnnotation, which is a wrapper for your
