@@ -23,7 +23,7 @@ pip install -r requirements.txt
 PYTHONPATH=. python results_scripts/figure1.py 
 ```
 
-For JudgeLM evaluations:
+For JudgeLM evaluations, you will need to do those additional steps:
 
 ```
 cd ..
