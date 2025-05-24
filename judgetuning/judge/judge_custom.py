@@ -41,7 +41,7 @@ class JudgeCustom(Judge):
                     preference=1 - float(len(request.output1) > len(request.output2)), # indicates the function used for evaluating preference
                     swap=False,                                                        # used for swapped positions of requests (for position bias)
                     judge_completion="NA",                                             # textual output if you are using an LLM judge
-                    **{k: v for k, v in request.__dict__.items() if k != "instruction"}
+                    **{k: v for k, v in request.__dict__.items() if k != "instruction"} # adding meta information from request as model names and different LLMs outputs
                 )
             ]
             for request in requests
