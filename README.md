@@ -27,7 +27,6 @@ PYTHONPATH=. python results_scripts/figure1.py
 For JudgeLM evaluations, you will need to do those additional steps:
 
 ```
-cd ..
 git clone https://github.com/baaivision/JudgeLM
 cd JudgeLM
 pip3 install --upgrade pip 
