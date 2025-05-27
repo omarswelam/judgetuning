@@ -67,13 +67,24 @@ PYTHONPATH=. python judgetuning/script/evaluate_spearman_correlation.py  --expid
 ```
 As above, you can customize the judge and other options, see `parse_args` to get the list of supported options.
 
-### Evaluating your own judge
-
-TODO Omar.
-
 ### Evaluating baselines
 
-TODO Omar.
+To regenerate the PandaLM and JudgeLM, you need to create the datasets and then run the human agreement score. 
+
+To generate the datasets, run the following:
+- for the llmsys datasets: `python judgetuning/annotation_dataset/tables/tables_lmsys_kaggle.py`
+- for the pandalm datasets: `python judgetuning/annotation_dataset/tables/tables_pandalm.py`
+
+To regenerate the results, run the following:
+```bash
+METHOD=judge-lm7b  # can also be judge-pandalm
+DATASET=lmsys 
+# evaluate judgelm on human agreement
+python judgetuning/script/evaluate_human_agreement.py --judge_class=$METHOD --max_len_prompt=8192 --max_pred_len=1024 --split=test --dataset=$DATASET --expid=random_run
+```
+- for evaluating JudgeLM on LLMSyS, set `METHOD` to `judge-lm7b`
+- for evaluating PandaLM on LLMSyS, set `METHOD` to `judge-pandalm`
+- for evaluating PandaLM on PandaLM dataset, set `METHOD` to `judge-pandalm` and `DATASET` to `pandalm`
 
 ## Computing Multiobjective Successive-Halving
 
